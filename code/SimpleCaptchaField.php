@@ -9,6 +9,8 @@
 class SimpleCaptchaField extends TextField
 {
 
+    protected $validateOnSubmit = false;
+
     /**
      * SimpleCaptchaField constructor.
      * @param string $name
@@ -22,6 +24,7 @@ class SimpleCaptchaField extends TextField
         parent::__construct($name, $title, $value, $maxLength);
 
     }
+
 
     /**
      * @return string
@@ -44,14 +47,31 @@ class SimpleCaptchaField extends TextField
     public function validate($validator)
     {
 
-        if (strtoupper($this->value) === SimpleCaptchaController::getCaptchaID()) {
+        if (self::getValidateOnSubmit()) {
             return true;
+        } else {
+
+            if (strtoupper($this->value) === SimpleCaptchaController::getCaptchaID()) {
+                return true;
+            }
+            $validator->validationError(
+                $this->name, sprintf("%s is wrong, Correct captcha is required", $this->value),
+                "validation"
+            );
+            return false;
+
         }
-        $validator->validationError(
-            $this->name, sprintf("%s is wrong, Correct captcha is required", $this->value),
-            "validation"
-        );
-        return false;
     }
 
+    public function setValidateOnSubmit($bol = false)
+    {
+        $this->validateOnSubmit = $bol;
+
+        return $this;
+    }
+
+    public function getValidateOnSubmit()
+    {
+        return $this->validateOnSubmit;
+    }
 }
