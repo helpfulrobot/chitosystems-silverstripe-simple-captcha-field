@@ -1,0 +1,29 @@
+{
+  "name": "utilities",
+  "version": "0.1",
+  "homepage": "https://github.com/chito/silverstripe-utility-plugins",
+  "authors": [
+    "Itayi Paul Patrick Chitovoro <patrick@chitosystems.com>"
+  ],
+  "description": "Silverstripe spam captcha field",
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "silverstripe",
+    "chitosystems",
+    "spam",
+    "field",
+    "captcha",
+    "recaptcha"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.txt",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

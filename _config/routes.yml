@@ -1,0 +1,7 @@
+---
+Name: chitoroutes
+After: framework/routes#coreroutes
+---
+Director:
+  rules:
+    'simple-validation//$Action/$ID/$OtherID': 'SimpleCaptchaController'

@@ -1,0 +1,25 @@
+{
+  "name": "chitosystems/silverstripe-simple-captcha-field",
+  "description": "Silverstripe spam captcha field",
+  "type": "silverstripe-module",
+  "keywords": [
+    "silverstripe",
+    "bootstrap",
+    "spam",
+    "captcha"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Itayi Patrick Chitovoro",
+      "email": "patrick@chitosystems.com"
+    }
+  ],
+  "require": {
+    "silverstripe/framework": "3.*",
+    "silverstripe/cms": "3.*"
+  },
+  "extra": {
+    "installer-name": "simple-captcha-field"
+  }
+}
