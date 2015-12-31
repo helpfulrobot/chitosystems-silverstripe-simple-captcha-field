@@ -22,14 +22,13 @@ class SimpleCaptchaField extends TextField
     {
         Requirements::css(SIMPLE_FORM_CAPTCHA_DIR . '/css/form.css');
         parent::__construct($name, $title, $value, $maxLength);
-
     }
 
 
     /**
      * @return string
      */
-    function getSkyImageLink()
+    public function getSkyImageLink()
     {
         $controller = SimpleCaptchaController::create();
         $controller->generateCaptchaID();
@@ -46,11 +45,9 @@ class SimpleCaptchaField extends TextField
      */
     public function validate($validator)
     {
-
         if (self::getValidateOnSubmit()) {
             return true;
         } else {
-
             if (strtoupper($this->value) === SimpleCaptchaController::getCaptchaID()) {
                 return true;
             }
@@ -59,7 +56,6 @@ class SimpleCaptchaField extends TextField
                 "validation"
             );
             return false;
-
         }
     }
 

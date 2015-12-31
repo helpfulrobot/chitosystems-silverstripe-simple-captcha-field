@@ -38,7 +38,6 @@ class SimpleCaptchaController extends Controller
         imagettftext($image, 20, $rotate, 18, 30, $colour, $font, $str);
         // Output the image as a png
         return imagepng($image);
-
     }
 
     public static function generateCaptchaID()
@@ -61,6 +60,4 @@ class SimpleCaptchaController extends Controller
     {
         return Session::get("simple_captcha_id");
     }
-
-
 }
