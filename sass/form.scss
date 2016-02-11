@@ -18,6 +18,9 @@
     text-align: left;
     white-space: normal;
     color: inherit;
+    &.right-title {
+      font-style: italic;
+    }
     &.input-captcha {
       position: relative;
       img {
@@ -25,7 +28,7 @@
         top: 1px;
         right: 1px;
         border-left: 1px solid #e5e5e5;
-        height: 32px;
+        height: 32px !important;
         z-index: 9;
       }
       input {
