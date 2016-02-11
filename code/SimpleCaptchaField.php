@@ -33,7 +33,7 @@ class SimpleCaptchaField extends TextField
     {
         $controller = SimpleCaptchaController::create();
         $controller->generateCaptchaID();
-        return $controller->Link() . "/image/?" . time();
+        return $controller->Link() . "image/?" . time();
     }
 
     protected $extraClasses = array('SimpleCaptchaField', 'form-control', 'field', 'text');
