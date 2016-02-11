@@ -6,7 +6,10 @@
 /* defaults */
 /**/
 .SimpleCaptchaField.field {
-  position: relative; }
+  position: relative;
+  margin-bottom: 10px; }
+  .SimpleCaptchaField.field.simplecaptcha {
+    margin-bottom: 0; }
   .SimpleCaptchaField.field label {
     display: block;
     margin-bottom: 6px;

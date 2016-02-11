@@ -8,6 +8,10 @@
 /**/
 .SimpleCaptchaField.field {
   position: relative;
+  margin-bottom: 10px;
+  &.simplecaptcha {
+    margin-bottom: 0;
+  }
   label {
     display: block;
     margin-bottom: 6px;
