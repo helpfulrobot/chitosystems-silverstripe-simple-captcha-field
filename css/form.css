@@ -17,6 +17,8 @@
     text-align: left;
     white-space: normal;
     color: inherit; }
+    .SimpleCaptchaField.field label.right-title {
+      font-style: italic; }
     .SimpleCaptchaField.field label.input-captcha {
       position: relative; }
       .SimpleCaptchaField.field label.input-captcha img {
@@ -24,7 +26,7 @@
         top: 1px;
         right: 1px;
         border-left: 1px solid #e5e5e5;
-        height: 32px;
+        height: 32px !important;
         z-index: 9; }
       .SimpleCaptchaField.field label.input-captcha input.holder-validation {
         background: #fff0f0;
