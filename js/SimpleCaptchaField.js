@@ -21,25 +21,32 @@ var SimpleCaptchaField = function () {
     return {
         validate: function () {
 
-            $("form." + SIMPLECAPTCHAFORM).on('submit', function (e) {
+
+            $("form." + SIMPLECAPTCHAFORM + " input[type='submit']").on('click', function (e) {
+                e.preventDefault();
 
                 var Captcha = $("input.SimpleCaptchaField").val();
                 var url = "simple-validation/validate/" + Captcha;
 
+                $form = $(this).closest('form');
                 $.ajax({
                     url: url,
                     type: 'get',
                     success: function (results) {
-                        if (results != 'valid') {
+                        $form.attr('data-recaptcha',results);
+                        if (results === 'valid') {
+                            $form.submit();
+                            return true;
+                        } else {
                             $('.input-captcha').append("<div class='message validation'>Correct captcha is required</div>");
                             return false;
                         }
-
                     },
                     error: function () {
                         alert('Sorry there has been an error');
                     }
                 });
+
             });
 
         }
