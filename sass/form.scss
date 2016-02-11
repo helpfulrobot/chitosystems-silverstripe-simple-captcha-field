@@ -6,52 +6,56 @@
 /**/
 /* defaults */
 /**/
-.SimpleCaptchaField.field {
-  position: relative;
-  margin-bottom: 10px;
-  &.simplecaptcha {
-    margin-bottom: 0;
-  }
-  label {
-    display: block;
-    margin-bottom: 6px;
-    line-height: 19px;
-    font-weight: 400;
-    border-radius: 0;
-    font-size: 100%;
-    text-align: left;
-    white-space: normal;
-    color: inherit;
-    &.right-title {
-      font-style: italic;
+.SimpleCaptchaField {
 
-    }
-    &.input-captcha {
-      position: relative;
-      img {
-        position: absolute;
-        top: 1px;
-        right: 1px;
-        border-left: 1px solid #e5e5e5;
-        height: 32px !important;
-        z-index: 9;
+  &.field {
+    position: relative;
+    margin-bottom: 10px;
+    label {
+      display: block;
+      margin-bottom: 6px;
+      line-height: 19px;
+      font-weight: 400;
+      border-radius: 0;
+      font-size: 100%;
+      text-align: left;
+      white-space: normal;
+      color: inherit;
+      &.right-title {
+        font-style: italic;
+
       }
-      input {
-        &.holder-validation {
-          background: #fff0f0;
-          margin-bottom: 0;
+      &.input-captcha {
+        position: relative;
+        img {
+          position: absolute;
+          top: 1px;
+          right: 1px;
+          border-left: 1px solid #e5e5e5;
+          height: 32px !important;
+          z-index: 9;
+        }
+        input {
+          &.holder-validation {
+            background: #fff0f0;
+            margin-bottom: 0;
+          }
         }
       }
     }
+
+    .message.validation {
+      display: block;
+      margin: 6px 0 15px;
+      padding: 0 1px;
+      font-style: normal;
+      font-size: 11px;
+      line-height: 15px;
+      color: #E10A12;
+    }
   }
 
-  .message.validation {
-    display: block;
-    margin: 6px 0 15px;
-    padding: 0 1px;
-    font-style: normal;
-    font-size: 11px;
-    line-height: 15px;
-    color: #E10A12;
+  &.simplecaptcha {
+    margin-bottom: 0;
   }
 }

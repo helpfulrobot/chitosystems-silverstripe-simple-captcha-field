@@ -8,8 +8,6 @@
 .SimpleCaptchaField.field {
   position: relative;
   margin-bottom: 10px; }
-  .SimpleCaptchaField.field.simplecaptcha {
-    margin-bottom: 0; }
   .SimpleCaptchaField.field label {
     display: block;
     margin-bottom: 6px;
@@ -42,5 +40,7 @@
     font-size: 11px;
     line-height: 15px;
     color: #E10A12; }
+.SimpleCaptchaField.simplecaptcha {
+  margin-bottom: 0; }
 
 /*# sourceMappingURL=form.css.map */
