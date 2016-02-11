@@ -33,7 +33,7 @@ class SimpleCaptchaController extends Controller
         // Set the font
         $font = SIMPLE_FORM_CAPTCHA_PATH . '/font/anorexia.ttf';
         // Set a random integer for the rotation between -15 and 15 degrees
-        $rotate = rand(-5, 10);
+        $rotate = rand(-1, 10);
         // Create an image using our original image and adding the detail
         imagettftext($image, 20, $rotate, 18, 30, $colour, $font, $str);
         // Output the image as a png
