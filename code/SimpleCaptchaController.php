@@ -12,11 +12,26 @@ class SimpleCaptchaController extends Controller
 {
     private static $allowed_actions = array(
         'image',
+        'validate',
     );
 
     public function Link($action = null)
     {
         return "simple-validation/$action";
+    }
+
+
+    /**
+     * @return bool
+     */
+    function validate()
+    {
+        $captcha = Convert::raw2sql($this->urlParams['ID']);
+        if (strtoupper($captcha) === self::getCaptchaID()) {
+            return 'valid';
+        }
+
+        return 'notvalid';
     }
 
     /**

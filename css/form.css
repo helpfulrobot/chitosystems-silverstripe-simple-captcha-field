@@ -35,7 +35,7 @@
   .SimpleCaptchaField.field .message.validation {
     display: block;
     margin: 6px 0 15px;
-    padding: 0 1px;
+    padding: 8px 12px;
     font-style: normal;
     font-size: 11px;
     line-height: 15px;

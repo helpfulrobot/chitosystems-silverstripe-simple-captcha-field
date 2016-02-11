@@ -15,13 +15,18 @@ class SimpleCaptchaField extends TextField
      * SimpleCaptchaField constructor.
      * @param string $name
      * @param null $title
-     * @param string $value
-     * @param int $maxLength
+     * @param string $form
      */
-    public function __construct($name, $title = null, $value = '', $maxLength = 6)
+    public function __construct($name, $title = null, $form)
     {
         Requirements::css(SIMPLE_FORM_CAPTCHA_DIR . '/css/form.css');
-        parent::__construct($name, $title, $value, $maxLength);
+        Requirements::javascript(SIMPLE_FORM_CAPTCHA_DIR . '/js/SimpleCaptchaField.js');
+
+        parent::__construct($name, $title, null, null, $form);
+
+        $formName = $form->getName();
+        $form->addExtraClass($formName);
+        Requirements::customScript(sprintf("var SIMPLECAPTCHAFORM = '%s'", $formName));
 
     }
 
@@ -54,10 +59,13 @@ class SimpleCaptchaField extends TextField
             if (strtoupper($this->value) === SimpleCaptchaController::getCaptchaID()) {
                 return true;
             }
+            $errormsg = sprintf("%s is wrong, Correct captcha is required", $this->value);
             $validator->validationError(
-                $this->name, sprintf("%s is wrong, Correct captcha is required", $this->value),
+                $this->name, $errormsg,
                 "validation"
             );
+
+            Session::set("SimpleCaptchaError", $errormsg);
             return false;
 
         }
