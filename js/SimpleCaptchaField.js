@@ -23,10 +23,8 @@ var SimpleCaptchaField = function () {
 
             $("form." + SIMPLECAPTCHAFORM).on('submit', function (e) {
 
-
                 var Captcha = $("input.SimpleCaptchaField").val();
                 var url = "simple-validation/validate/" + Captcha;
-
 
                 $.ajax({
                     url: url,
@@ -42,20 +40,8 @@ var SimpleCaptchaField = function () {
                         alert('Sorry there has been an error');
                     }
                 });
-
-
-                return false;
-
-
-
-
             });
 
-
-            /*
-             var url = "simple-validation/validate/";
-
-             */
         }
     }
 }();
